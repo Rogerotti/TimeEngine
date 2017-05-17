@@ -73,6 +73,8 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)Dependencies\glfw\include;$(SolutionDir)Dependencies\glew\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\glfw\lib;$(SolutionDir)Dependencies\glew\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -81,6 +83,8 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)Dependencies\glfw\include;$(SolutionDir)Dependencies\glew\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\glfw\lib;$(SolutionDir)Dependencies\glew\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -160,13 +164,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Graphics\Window\OpenGLWindow.cpp" />
+    <ClCompile Include="src\Graphics\Windows\OpenGLWindow.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="src\Graphics\Window\window.cpp" />
+    <ClCompile Include="src\Graphics\Windows\IWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Graphics\Window\OpenGLWindow.h" />
-    <ClInclude Include="src\Graphics\Window\window.h" />
+    <ClInclude Include="src\Graphics\Windows\OpenGLWindow.h" />
+    <ClInclude Include="src\Graphics\Windows\IWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
