@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\Graphics">
+      <UniqueIdentifier>{1848185a-6dfe-4d73-998c-758d75dee318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graphics\Window">
+      <UniqueIdentifier>{738fa1e0-8ee9-4777-aa15-4cc6da219c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graphics\Window\OpenGl">
+      <UniqueIdentifier>{2603b47b-0854-44a7-abb1-c58f732a73f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Windows\IWindow.cpp">
+      <Filter>src\Graphics\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Windows\OpenGLWindow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Graphics\Windows\IWindow.h">
+      <Filter>src\Graphics\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Windows\OpenGLWindow.h" />
+  </ItemGroup>
+</Project>

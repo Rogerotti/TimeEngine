@@ -1,7 +1,9 @@
 #pragma once
 #include "OpenGLWindow.h"
-namespace Core { namespace Graphic { namespace OpenGL 
+namespace Core { namespace Graphic { namespace OpenGL
 {
+	void windowResizeCallback(GLFWwindow* window, int width, int height);
+
 	void OpenGLWindow::initialize()
 	{
 		if (!glfwInit())
@@ -21,16 +23,20 @@ namespace Core { namespace Graphic { namespace OpenGL
 		GLenum err = glewInit();
 		if (GLEW_OK != err)
 			std::cout << "Error initializing OpenGl Window because of glew library." << std::endl;
+
+		setWindowGeneralSettings();
+		glfwSetWindowSizeCallback(m_window, windowResizeCallback);
 	}
 
-	void OpenGLWindow::clear()
+	void OpenGLWindow::clear() const
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
-
-	void OpenGLWindow::update() const
+	
+	void OpenGLWindow::update()
 	{
 		glfwSwapBuffers(m_window);
+		glfwGetFramebufferSize(m_window, &m_width, &m_height);
 		glfwPollEvents();
 	}
 
@@ -39,12 +45,24 @@ namespace Core { namespace Graphic { namespace OpenGL
 		return glfwWindowShouldClose(m_window) == 1;
 	}
 
-	OpenGLWindow::OpenGLWindow(char* title, int width, int height) : Window(title, width, height)
+	void OpenGLWindow::setWindowGeneralSettings()
 	{
+		glfwWindowHint(GLFW_RESIZABLE, 1);
+		glfwWindowHint(GLFW_FOCUSED, 1);
 	}
+
+	OpenGLWindow::OpenGLWindow(char* title, int width, int height) 
+		: IWindow(title, width, height){}
 
 	OpenGLWindow::~OpenGLWindow()
 	{
 		glfwTerminate();
+		glfwDestroyWindow(m_window);
 	}
+
+	void windowResizeCallback(GLFWwindow* window, int width, int height)
+	{
+		glViewport(0, 0, width, height);
+	}
+
 }}}

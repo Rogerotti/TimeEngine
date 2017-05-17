@@ -1,8 +1,8 @@
-#include "window.h"
+#include "IWindow.h"
 
 namespace Core { namespace Graphic
 {
-	Window::Window(char* title, int width, int height)
+	IWindow::IWindow(char* title, int width, int height)
 	{
 		m_title = title;
 		m_height = height;
