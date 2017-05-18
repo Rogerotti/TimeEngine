@@ -25,11 +25,21 @@
     <ClCompile Include="src\Graphics\Windows\OpenGLWindow.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Input\IInputDispatcher.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\KeyBinding.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Graphics\Windows\IWindow.h">
       <Filter>src\Graphics\Window</Filter>
     </ClInclude>
     <ClInclude Include="src\Graphics\Windows\OpenGLWindow.h" />
+    <ClInclude Include="src\Input\IInputDispatcher.h" />
+    <ClInclude Include="src\Input\Types\RawInputButtons.h" />
+    <ClInclude Include="src\Input\Types\KeyState.h" />
+    <ClInclude Include="src\Input\KeyBinding.h" />
   </ItemGroup>
 </Project>

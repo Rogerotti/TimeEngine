@@ -9,7 +9,7 @@ namespace Core { namespace Graphic
 		virtual void update() = 0;
 		virtual void clear() const = 0;
 		virtual bool shouldWindowClose() const = 0;
-		IWindow(char* title, int width, int height);
+		IWindow(char* title, const int width, const int height);
 		virtual ~IWindow() {}
 	protected:
 		char* m_title;

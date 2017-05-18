@@ -2,11 +2,10 @@
 
 namespace Core { namespace Graphic
 {
-	IWindow::IWindow(char* title, int width, int height)
-	{
-		m_title = title;
-		m_height = height;
-		m_width = width;
-	}
+	IWindow::IWindow(char* title, const int width, const int height):
+		m_title(title),
+		m_width(width),
+		m_height(height)
+	{}
 }}
 

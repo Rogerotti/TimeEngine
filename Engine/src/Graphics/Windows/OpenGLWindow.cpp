@@ -2,8 +2,6 @@
 #include "OpenGLWindow.h"
 namespace Core { namespace Graphic { namespace OpenGL
 {
-	void windowResizeCallback(GLFWwindow* window, int width, int height);
-
 	void OpenGLWindow::initialize()
 	{
 		if (!glfwInit())
@@ -26,6 +24,8 @@ namespace Core { namespace Graphic { namespace OpenGL
 
 		setWindowGeneralSettings();
 		glfwSetWindowSizeCallback(m_window, windowResizeCallback);
+		// Ustawia wskaŸnik aktualnego okna dzieki czemu bêdziemy mogli pozyskaæ nasze okno w ka¿dym callbacku.
+		glfwSetWindowUserPointer(m_window, this);
 	}
 
 	void OpenGLWindow::clear() const
@@ -60,9 +60,12 @@ namespace Core { namespace Graphic { namespace OpenGL
 		glfwDestroyWindow(m_window);
 	}
 
-	void windowResizeCallback(GLFWwindow* window, int width, int height)
+	static void windowResizeCallback(GLFWwindow* window, int width, int height)
 	{
+		OpenGLWindow* openGlWindow = (OpenGLWindow*)glfwGetWindowUserPointer(window);
 		glViewport(0, 0, width, height);
+		openGlWindow->m_width = width;
+		openGlWindow->m_height = height;
 	}
 
 }}}

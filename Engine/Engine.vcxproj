@@ -164,13 +164,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Input\KeyBinding.cpp" />
+    <ClCompile Include="src\Input\IInputDispatcher.cpp" />
     <ClCompile Include="src\Graphics\Windows\OpenGLWindow.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="src\Graphics\Windows\IWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Input\KeyBinding.h" />
+    <ClInclude Include="src\Input\Types\KeyState.h" />
+    <ClInclude Include="src\Input\IInputDispatcher.h" />
     <ClInclude Include="src\Graphics\Windows\OpenGLWindow.h" />
     <ClInclude Include="src\Graphics\Windows\IWindow.h" />
+    <ClInclude Include="src\Input\Types\RawInputButtons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,6 +19,7 @@ namespace Core { namespace Graphic { namespace OpenGL
 	private:
 		// Ustawia podstawowe wartoœci okna
 		void setWindowGeneralSettings();
+		static friend void windowResizeCallback(GLFWwindow* window, int width, int height);
 		GLFWwindow* m_window;
 	};
 }}}
