@@ -164,19 +164,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Input\KeyBinding.cpp" />
-    <ClCompile Include="src\Input\IInputDispatcher.cpp" />
+    <ClCompile Include="src\Input\BindedKey.cpp" />
+    <ClCompile Include="src\Input\Mapper\InputMapper.cpp" />
+    <ClCompile Include="src\Input\IInputContext.cpp" />
+    <ClCompile Include="src\Input\RawInput\RawInputRetriever.cpp" />
     <ClCompile Include="src\Graphics\Windows\OpenGLWindow.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="src\Graphics\Windows\IWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Input\KeyBinding.h" />
-    <ClInclude Include="src\Input\Types\KeyState.h" />
-    <ClInclude Include="src\Input\IInputDispatcher.h" />
+    <ClInclude Include="src\Input\BindedKey.h" />
+    <ClInclude Include="src\Input\Mapper\InputMapper.h" />
+    <ClInclude Include="src\Input\IInputContext.h" />
+    <ClInclude Include="src\Input\RawInput\RawInputRetriever.h" />
+    <ClInclude Include="src\Input\KeyState.h" />
     <ClInclude Include="src\Graphics\Windows\OpenGLWindow.h" />
     <ClInclude Include="src\Graphics\Windows\IWindow.h" />
-    <ClInclude Include="src\Input\Types\RawInputButtons.h" />
+    <ClInclude Include="src\Input\RawInputButtons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,7 @@
 #pragma once
+#define GLFW_EXPOSE_NATIVE_WIN32
 #include "OpenGLWindow.h"
+
 namespace Core { namespace Graphic { namespace OpenGL
 {
 	void OpenGLWindow::initialize()
@@ -26,6 +28,7 @@ namespace Core { namespace Graphic { namespace OpenGL
 		glfwSetWindowSizeCallback(m_window, windowResizeCallback);
 		// Ustawia wskaŸnik aktualnego okna dzieki czemu bêdziemy mogli pozyskaæ nasze okno w ka¿dym callbacku.
 		glfwSetWindowUserPointer(m_window, this);
+		m_windowHandler = glfwGetWin32Window(m_window);
 	}
 
 	void OpenGLWindow::clear() const

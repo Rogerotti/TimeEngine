@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<ContextList>
+<Context>
+	<Name>game</Name>
+	<Actions>
+		<Action>Move_Left</Action>
+		<Action>Move_Right</Action>
+		<Action>Jump</Action>
+		<Action>Run</Action>
+	</Actions>
+</Context>
+
+<Context>
+	<Name>Main_menu</Name>
+	<Actions>
+		<Action>Confirm</Action>
+		<Action>Move_up</Action>
+		<Action>Move_down</Action>
+	</Actions>
+</Context>
+</ContextList>

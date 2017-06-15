@@ -2,12 +2,12 @@
 #include "IWindow.h"
 #include <glew.h>
 #include <glfw3.h>
+#include <glfw3native.h>
 #include <iostream>
-
 namespace Core { namespace Graphic { namespace OpenGL
 {
 	// Okno g³ówne wykorzystuj¹ce OpenGl.
-	class OpenGLWindow : IWindow
+	class OpenGLWindow : public IWindow
 	{
 	public:
 		virtual void initialize();

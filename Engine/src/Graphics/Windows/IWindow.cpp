@@ -1,3 +1,4 @@
+#pragma once
 #include "IWindow.h"
 
 namespace Core { namespace Graphic
